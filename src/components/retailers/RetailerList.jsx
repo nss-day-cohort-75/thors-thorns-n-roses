@@ -1,38 +1,25 @@
-// src\components\retailers\RetailerList.jsx
+// src/components/retailers/RetailerList.jsx
 import React, { useState, useEffect } from "react";
 import { getRetailerDetails } from "../../services/RetailerService";
-import RetailerItem from "./RetailerItem";
+import { RetailerItem } from "./RetailerItem";
 
 export const RetailerList = () => {
   const [retailers, setRetailers] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const retailerData = await getRetailerDetails();
-        setRetailers(retailerData);
-      } catch (error) {
-        console.error("Error fetching retailer details:", error);
-      } finally {
-        setLoading(false);
-      }
+      setRetailers(await getRetailerDetails());
     };
-
     fetchData();
   }, []);
 
-  if (loading) return <p>Loading retailers...</p>;
-
   return (
-    <div>
-      <h2>Retailers</h2>
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-4">Retailers</h1> 
       {retailers.length > 0 ? (
-        retailers.map((retailer) => (
-          <RetailerItem key={retailer.id} retailer={retailer} />
-        ))
+        retailers.map(retailer => <RetailerItem key={`retailer-${retailer.id}`} retailer={retailer} />) 
       ) : (
-        <p>No retailers available.</p>
+        <p>Loading retailers...</p>
       )}
     </div>
   );

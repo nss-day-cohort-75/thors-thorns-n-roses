@@ -1,4 +1,4 @@
-// src\components\retailers\RetailerItem.jsx
+// src/components/retailers/RetailerItem.jsx
 import React from "react";
 
 export const RetailerItem = ({ retailer }) => {
@@ -12,8 +12,8 @@ export const RetailerItem = ({ retailer }) => {
       <h4>Flowers Sold:</h4>
       {flowers.length > 0 ? (
         <ul>
-          {flowers.map((flower) => (
-            <li key={flower.id}>
+          {flowers.map((flower, index) => (
+            <li key={`flower-${flower.id}-${index}`}>
               {flower.color} {flower.species} - ${flower.price.toFixed(2)}
             </li>
           ))}
@@ -28,8 +28,8 @@ export const RetailerItem = ({ retailer }) => {
       <h4>Nurseries Supplying Flowers:</h4>
       {nurseries.length > 0 ? (
         <ul>
-          {nurseries.map((nursery) => (
-            <li key={nursery.id}>{nursery.name}</li>
+          {nurseries.map((nursery, index) => (
+            <li key={`nursery-${nursery.id}-${index}`}>{nursery.name}</li>
           ))}
         </ul>
       ) : (
@@ -38,4 +38,3 @@ export const RetailerItem = ({ retailer }) => {
     </div>
   );
 };
-
