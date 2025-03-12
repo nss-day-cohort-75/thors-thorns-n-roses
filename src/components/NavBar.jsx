@@ -16,14 +16,14 @@ export const NavBar = () => {
         <Link to="/Distributors"className="navbar-link">Distributors</Link>
       </li>
       
-{localStorage.getItem("user_token") ? (
+{localStorage.getItem("thorn_user") ? (
   <li className="navbar-item navbar-logout">
     <Link
       className="navbar-link"
       to=""
       onClick={() => {
-        localStorage.removeItem("user_token")
-        navigate("/", { replace: true })
+        localStorage.removeItem("thorn_user")
+        navigate("/login", { replace: true })
       }}
     >
       Logout 

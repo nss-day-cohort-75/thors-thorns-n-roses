@@ -1,0 +1,76 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.nursery-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    text-align: center;
+    color: #6e0f9e;
+    border-bottom: 2px solid #0b0b0b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+.nursery-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+
+.nursery-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+.nursery-item h4 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #680375;
+}
+
+
+.nursery-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.nursery-item li {
+    background: #f1f1f1;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+.distributor-info {
+    font-weight: bold;
+    color: #28a745;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0; 
+}
+
