@@ -9,15 +9,17 @@ export const Distributor = ({distributor, flowers, nurseryFlowers, distributorNu
             <div className="distributor-flowers">
                 <b>Flowers</b>
                 {filteredDistributorNurseries.map(dn => {
+                    console.table(dn)
                     //filter the nurseryFlowers by nursery id
                     const filteredNurseryFlowers = nurseryFlowers.filter(nf => nf.nurseryId === dn.id)
                     return filteredNurseryFlowers.map(nf => {
                         //filter the flowers by flower id
                         const filteredFlowers = flowers.filter(flower => flower.id === nf.flowerId)
+                        const markupPrice = parseFloat(nf.price) + distributor.markup
                         return filteredFlowers.map(flower => {
                             return (
                                 <div className="distributor-flower" key={flower.id}>
-                                    {flower.color + " " + flower.species}
+                                    {flower.color + " " + flower.species + " $" + parseFloat(markupPrice).toFixed(2) }
                                 </div>
                             )
                         })
