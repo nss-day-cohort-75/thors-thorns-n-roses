@@ -2,6 +2,7 @@ import { getNurseries } from "../services/NurseryService";
 import { getFlowers, getNurseryFlowers } from "../services/FlowerService";
 import React, { useState, useEffect } from "react";
 import { getDistributors, getNurseryDistributors } from "../services/DistributorService";
+import "../CSSFolder/Nurseries.css"
 
 export const NurseryList = () => {
   const [nurseries, setNurseries] = useState([]);
@@ -28,9 +29,9 @@ export const NurseryList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="nursery-container">
       <h2>Nurseries</h2>
-      <ol>
+      <ul>
         {nurseries.map((nursery) => {
           const flowersInNursery = nurseryFlowers
             .filter((nurseryFlower) => nurseryFlower.nurseryId === nursery.id)
@@ -44,7 +45,7 @@ export const NurseryList = () => {
             const distributorsForNursery = nurseryDistributors.filter((nurseryDistributors)=> nurseryDistributors.nurseryId === nursery.id)
             .map((nurseryDistributors) => distributors.find((distributors) => distributors.id === nurseryDistributors.distributorId))
           return (
-            <li key={nursery.id}>
+            <li key={nursery.id} className="nursery-item">
             <div>
               <h3>{nursery.name}</h3>
               <h4>Flowers Being Grown:</h4>
@@ -63,7 +64,7 @@ export const NurseryList = () => {
               <ul>
               {distributorsForNursery.length > 0 ? (
                     distributorsForNursery.map((distributor) => (
-                      <li key={distributor.id}>{distributor.name} (Markup: {distributor.markup * 100}%)</li>
+                      <li key={distributor.id} className="distributor-info">{distributor.name} (Markup: {distributor.markup * 100}%)</li>
                     ))
                   ) : (
                     <li>No distributors available</li>
@@ -73,7 +74,7 @@ export const NurseryList = () => {
           </li>
           );
         })}
-      </ol>
+      </ul>
     </div>
   );
 };
