@@ -1,11 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import { NurseryList } from "../NurseryList";
+import { NurseryList } from "../components/NurseryList";
+
+
 // import retailers
 //import distributors
 
-export const ApplicationView = () => {
+export const ApplicationViews = () => {
     return (
         <Routes>
+            
             <Route path="/" element={<div></div>} />
             <Route path="/nurseries" element={<NurseryList />} />
             <Route path="/retailers" element={<div><h1>Retailers</h1></div>} />
