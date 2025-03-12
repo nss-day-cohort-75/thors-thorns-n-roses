@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { NurseryList } from "../components/NurseryList";
 
-
+import RetailerList from "./components/retailers/RetailerList";
 // import retailers
 //import distributors
 
