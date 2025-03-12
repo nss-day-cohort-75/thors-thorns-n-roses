@@ -1,102 +1,248 @@
 {
-    "flowers": [
-      { "id": 1, "color": "Red", "species": "Rose"},
-      { "id": 2, "color": "Pink", "species": "Tulip" },
-      { "id": 3, "color": "Yellow", "species": "SunFlower"},
-      { "id": 4, "color": "Purple", "species": "Iris"},
-      { "id": 5, "color": "White", "species": "Lily"}
-    ],
-    "nurseries": [
-      { "id": 1, "name": "Sunny Fields Nursery" },
-      { "id": 2, "name": "Green Thumbs" },
-      { "id": 3, "name": "Flower Farms" },
-      { "id": 4, "name": "Blossom Valley" },
-      { "id": 5, "name": "Forever Green" }
-    ],
-    "distributors": [
-        { "id": 1, "name": "Flora Distributors Inc.", "markup": 0.10 },
-        { "id": 2, "name": "Petal Express", "markup": 0.15 },
-        { "id": 3, "name": "Garden Wholesale", "markup": 0.20 },
-        { "id": 4, "name": "Blossom Supply Co.", "markup": 0.25 },
-        { "id": 5, "name": "Flower Powers", "markup": 0.50 }
-      ],
-    "retailers": [
-        { "id": 1, "name": "Bloom Boutique", "address": "123 Floral St, Nashville", "markup": 0.15, "distributorId":1},
-        { "id": 2, "name": "Petal Paradise", "address": "456 Garden Ave, Dickson", "markup": 0.10,"distributorId":2},
-        { "id": 3, "name": "Nature's Bounty", "address": "789 Greenway Dr, Knoxville", "markup": 0.50, "distributorId":3},
-        { "id": 4, "name": "The Floral Shop", "address": "321 Blossom Rd, Atlanta", "markup": 0.10, "distributorId":4},
-        { "id": 5, "name": "Elegant Stems", "address": "654 Petunia Ln, Chattanooga", "markup": 0.25,"distributorId":5}
-      ],
-    "nursery_flower": [
-      { "id": 1, "flowerId": 1, "nurseryId": 1, "price": 5.00 },
-      { "id": 2, "flowerId": 2, "nurseryId": 1, "price": 4.00 },
-      { "id": 3, "flowerId": 3, "nurseryId": 2, "price": 6.00 },
-      { "id": 4, "flowerId": 4, "nurseryId": 3, "price": 3.00 },
-      { "id": 5, "flowerId": 5, "nurseryId": 4, "price": 7.00 },
-      { "id": 6, "flowerId": 1, "nurseryId": 5, "price": 4.00 },
-      { "id": 7, "flowerId": 3, "nurseryId": 5, "price": 5.00 }
-    ],
-    "distributor_nursery": [
-      { "id": 1, "nurseryId": 1, "distributorId": 1 },
-      { "id": 2, "nurseryId": 2, "distributorId": 2 },
-      { "id": 3, "nurseryId": 3, "distributorId": 3 },
-      { "id": 4, "nurseryId": 4, "distributorId": 4 },
-      { "id": 5, "nurseryId": 5, "distributorId": 5 },
-      { "id": 6, "nurseryId": 1, "distributorId": 3 },
-      { "id": 7, "nurseryId": 2, "distributorId": 5 }
-    ],
-    "customers": [
-  {
-    "id": 1,
-    "name": "Alice Johnson",
-    "businessName": "Alice's Florals",
-    "email": "alice@email.com",
-    "password": "securePass1"
-  },
-  {
-    "id": 2,
-    "name": "Michael Smith",
-    "businessName": "Smith & Sons Flowers",
-    "email": "michael@email.com",
-    "password": "securePass2"
-  },
-  {
-    "id": 3,
-    "name": "Sophia Martinez",
-    "businessName": "Martinez Blooms",
-    "email": "sophia@email.com",
-    "password": "securePass3"
-  },
-  {
-    "id": 4,
-    "name": "David Brown",
-    "businessName": "Brown's Petals",
-    "email": "david@mail.com",
-    "password": "securePass4"
-  },
-  {
-    "id": 5,
-    "name": "Emma Davis",
-    "businessName": "Elegant Stems",
-    "email": "emma@email.com",
-    "password": "securePass5"
-  },
-  {
-    "id": 6,
-    "name": "James Wilson",
-    "businessName": "Wilson's Greenhouse",
-    "email": "james@mail.com",
-    "password": "securePass6"
-  },
-  {
-    "id": 7,
-    "name": "Olivia Taylor",
-    "businessName": "Taylor Blossoms",
-    "email": "olivia@mail.com",
-    "password": "securePass7"
-  }
-],
-    "shopping_cart": []
-  }
-  
-  
+  "flowers": [
+    {
+      "id": 1,
+      "color": "Red",
+      "species": "Rose"
+    },
+    {
+      "id": 2,
+      "color": "Pink",
+      "species": "Tulip"
+    },
+    {
+      "id": 3,
+      "color": "Yellow",
+      "species": "SunFlower"
+    },
+    {
+      "id": 4,
+      "color": "Purple",
+      "species": "Iris"
+    },
+    {
+      "id": 5,
+      "color": "White",
+      "species": "Lily"
+    }
+  ],
+  "nurseries": [
+    {
+      "id": 1,
+      "name": "Sunny Fields Nursery"
+    },
+    {
+      "id": 2,
+      "name": "Green Thumbs"
+    },
+    {
+      "id": 3,
+      "name": "Flower Farms"
+    },
+    {
+      "id": 4,
+      "name": "Blossom Valley"
+    },
+    {
+      "id": 5,
+      "name": "Forever Green"
+    }
+  ],
+  "distributors": [
+    {
+      "id": 1,
+      "name": "Flora Distributors Inc.",
+      "markup": 0.1
+    },
+    {
+      "id": 2,
+      "name": "Petal Express",
+      "markup": 0.15
+    },
+    {
+      "id": 3,
+      "name": "Garden Wholesale",
+      "markup": 0.2
+    },
+    {
+      "id": 4,
+      "name": "Blossom Supply Co.",
+      "markup": 0.25
+    },
+    {
+      "id": 5,
+      "name": "Flower Powers",
+      "markup": 0.5
+    }
+  ],
+  "retailers": [
+    {
+      "id": 1,
+      "name": "Bloom Boutique",
+      "address": "123 Floral St, Nashville",
+      "markup": 0.15,
+      "distributorId": 1
+    },
+    {
+      "id": 2,
+      "name": "Petal Paradise",
+      "address": "456 Garden Ave, Dickson",
+      "markup": 0.1,
+      "distributorId": 2
+    },
+    {
+      "id": 3,
+      "name": "Nature's Bounty",
+      "address": "789 Greenway Dr, Knoxville",
+      "markup": 0.5,
+      "distributorId": 3
+    },
+    {
+      "id": 4,
+      "name": "The Floral Shop",
+      "address": "321 Blossom Rd, Atlanta",
+      "markup": 0.1,
+      "distributorId": 4
+    },
+    {
+      "id": 5,
+      "name": "Elegant Stems",
+      "address": "654 Petunia Ln, Chattanooga",
+      "markup": 0.25,
+      "distributorId": 5
+    }
+  ],
+  "nursery_flower": [
+    {
+      "id": 1,
+      "flowerId": 1,
+      "nurseryId": 1,
+      "price": 5
+    },
+    {
+      "id": 2,
+      "flowerId": 2,
+      "nurseryId": 1,
+      "price": 4
+    },
+    {
+      "id": 3,
+      "flowerId": 3,
+      "nurseryId": 2,
+      "price": 6
+    },
+    {
+      "id": 4,
+      "flowerId": 4,
+      "nurseryId": 3,
+      "price": 3
+    },
+    {
+      "id": 5,
+      "flowerId": 5,
+      "nurseryId": 4,
+      "price": 7
+    },
+    {
+      "id": 6,
+      "flowerId": 1,
+      "nurseryId": 5,
+      "price": 4
+    },
+    {
+      "id": 7,
+      "flowerId": 3,
+      "nurseryId": 5,
+      "price": 5
+    }
+  ],
+  "distributor_nursery": [
+    {
+      "id": 1,
+      "nurseryId": 1,
+      "distributorId": 1
+    },
+    {
+      "id": 2,
+      "nurseryId": 2,
+      "distributorId": 2
+    },
+    {
+      "id": 3,
+      "nurseryId": 3,
+      "distributorId": 3
+    },
+    {
+      "id": 4,
+      "nurseryId": 4,
+      "distributorId": 4
+    },
+    {
+      "id": 5,
+      "nurseryId": 5,
+      "distributorId": 5
+    },
+    {
+      "id": 6,
+      "nurseryId": 1,
+      "distributorId": 3
+    },
+    {
+      "id": 7,
+      "nurseryId": 2,
+      "distributorId": 5
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "businessName": "Alice's Florals",
+      "email": "alice@email.com",
+      "password": "securePass1"
+    },
+    {
+      "id": 2,
+      "name": "Michael Smith",
+      "businessName": "Smith & Sons Flowers",
+      "email": "michael@email.com",
+      "password": "securePass2"
+    },
+    {
+      "id": 3,
+      "name": "Sophia Martinez",
+      "businessName": "Martinez Blooms",
+      "email": "sophia@email.com",
+      "password": "securePass3"
+    },
+    {
+      "id": 4,
+      "name": "David Brown",
+      "businessName": "Brown's Petals",
+      "email": "david@mail.com",
+      "password": "securePass4"
+    },
+    {
+      "id": 5,
+      "name": "Emma Davis",
+      "businessName": "Elegant Stems",
+      "email": "emma@email.com",
+      "password": "securePass5"
+    },
+    {
+      "id": 6,
+      "name": "James Wilson",
+      "businessName": "Wilson's Greenhouse",
+      "email": "james@mail.com",
+      "password": "securePass6"
+    },
+    {
+      "id": 7,
+      "name": "Olivia Taylor",
+      "businessName": "Taylor Blossoms",
+      "email": "olivia@mail.com",
+      "password": "securePass7"
+    }
+  ],
+  "shopping_cart": []
+}
