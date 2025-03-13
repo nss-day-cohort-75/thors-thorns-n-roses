@@ -148,12 +148,6 @@
       "flowerId": 1,
       "nurseryId": 5,
       "price": 4
-    },
-    {
-      "id": 7,
-      "flowerId": 3,
-      "nurseryId": 5,
-      "price": 5
     }
   ],
   "distributor_nursery": [

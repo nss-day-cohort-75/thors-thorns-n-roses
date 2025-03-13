@@ -1,4 +1,3 @@
-// src/components/retailers/RetailerList.jsx
 import React, { useState, useEffect } from "react";
 import { getRetailerDetails } from "../../services/RetailerService";
 import { RetailerItem } from "./RetailerItem";
