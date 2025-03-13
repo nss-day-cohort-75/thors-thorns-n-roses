@@ -33,12 +33,11 @@ export const RetailerItem = ({ retailer }) => {
         <ul>
           {flowers.map((flower) => {
             // Calculate the price with the distributor's markup
-            const distributorPrice = parseFloat(flower.price) * (1 + distributor.markup);
-            console.log(`Distributor Price: ${distributorPrice}`);
+            const retailerPrice = parseFloat(flower.price) * (1 + distributor.markup);
 
             return (
               <li key={`flower-${flower.id}`}>
-                {flower.color} {flower.species} - ${distributorPrice.toFixed(2)}
+                {flower.color} {flower.species} - ${retailerPrice.toFixed(2)}
                 <button
                   onClick={() => {
                     handleAddToCart(flower.id);
