@@ -242,13 +242,6 @@
       "businessName": "Taylor Blossoms",
       "email": "olivia@mail.com",
       "password": "securePass7"
-    },
-    {
-      "fullName": "dfasd",
-      "businessName": "afdsadfs",
-      "email": "cwelshofer@gmail.com",
-      "password": "1",
-      "id": 8
     }
   ],
   "shopping_cart": [
@@ -300,25 +293,6 @@
       "flowerId": 0,
       "quantity": 0,
       "id": 7
-    },
-    {
-      "customerId": 8,
-      "retailerId": 0,
-      "flowerId": 0,
-      "quantity": 0,
-      "id": 8
-    },
-    {
-      "customerId": 1,
-      "flowerId": 1,
-      "quantity": 1,
-      "id": 9
-    },
-    {
-      "customerId": 1,
-      "flowerId": 2,
-      "quantity": 1,
-      "id": 10
     }
   ]
 }

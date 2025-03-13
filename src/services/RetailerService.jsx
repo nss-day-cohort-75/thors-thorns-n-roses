@@ -52,7 +52,7 @@ export const getRetailerDetails = async () => {
         })
         .filter((f) => f);
 
-      const distributorFlowers = supplierNurseries.filter(
+      const distributorFlowers = supplierNurseries.filter( //Filter FIX for retailer display
         (flower) => flower.nurseryId === distributor.id
       );
 
