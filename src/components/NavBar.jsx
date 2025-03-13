@@ -10,11 +10,15 @@ export const NavBar = () => {
         <Link to="/Nurseries"className="navbar-link">Nurseries</Link>
       </li>
       <li className="navbar-item">
+        <Link to="/Distributors"className="navbar-link">Distributors</Link>
+      </li>
+      <li className="navbar-item">
         <Link to="/Retailers"className="navbar-link">Retailers</Link>
       </li>
       <li className="navbar-item">
-        <Link to="/Distributors"className="navbar-link">Distributors</Link>
+        <Link to="/ShoppingCart"className="navbar-link">Cart</Link>
       </li>
+      
       
 {localStorage.getItem("thorn_user") ? (
   <li className="navbar-item navbar-logout">

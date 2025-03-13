@@ -242,7 +242,83 @@
       "businessName": "Taylor Blossoms",
       "email": "olivia@mail.com",
       "password": "securePass7"
+    },
+    {
+      "fullName": "dfasd",
+      "businessName": "afdsadfs",
+      "email": "cwelshofer@gmail.com",
+      "password": "1",
+      "id": 8
     }
   ],
-  "shopping_cart": []
+  "shopping_cart": [
+    {
+      "customerId": 1,
+      "retailerId": 0,
+      "flowerId": 0,
+      "quantity": 0,
+      "id": 1
+    },
+    {
+      "customerId": 2,
+      "retailerId": 0,
+      "flowerId": 0,
+      "quantity": 0,
+      "id": 2
+    },
+    {
+      "customerId": 3,
+      "retailerId": 0,
+      "flowerId": 0,
+      "quantity": 0,
+      "id": 3
+    },
+    {
+      "customerId": 4,
+      "retailerId": 0,
+      "flowerId": 0,
+      "quantity": 0,
+      "id": 4
+    },
+    {
+      "customerId": 5,
+      "retailerId": 0,
+      "flowerId": 0,
+      "quantity": 0,
+      "id": 5
+    },
+    {
+      "customerId": 6,
+      "retailerId": 0,
+      "flowerId": 0,
+      "quantity": 0,
+      "id": 6
+    },
+    {
+      "customerId": 7,
+      "retailerId": 0,
+      "flowerId": 0,
+      "quantity": 0,
+      "id": 7
+    },
+    {
+      "customerId": 8,
+      "retailerId": 0,
+      "flowerId": 0,
+      "quantity": 0,
+      "id": 8
+    },
+    {
+      "customerId": 1,
+      "flowerId": 1,
+      "quantity": 1,
+      "id": 9
+    },
+    {
+      "customerId": 1,
+      "flowerId": 2,
+      "quantity": 1,
+      "id": 10
+    }
+  ]
 }

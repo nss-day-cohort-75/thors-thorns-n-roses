@@ -13,3 +13,13 @@ export const createUser = (customer) => {
     body: JSON.stringify(customer),
   }).then((res) => res.json());
 };
+
+export const createShoppingCart = (cartData) => {
+  return fetch("http://localhost:8088/shopping_cart", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(cartData),
+  }).then((res) => res.json());
+};
