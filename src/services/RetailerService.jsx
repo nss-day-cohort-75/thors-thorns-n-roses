@@ -37,12 +37,13 @@ export const getRetailerDetails = async () => {
             
             // Get nurseries supplying this distributor
             const supplierNurseries = nurseryFlowers
-                .filter(nf => nurseries.some(n => n.id === nf.nurseryId))
-                .map(nf => {
-                    const flower = flowers.find(f => f.id === nf.flowerId);
-                    return flower ? { ...flower, price: nf.price * (1 + retailer.markup) } : null;
-                })
-                .filter(f => f);
+            .filter(nf => nurseries.some(n => n.id === nf.nurseryId))
+            .map(nf => {
+                const flower = flowers.find(f => f.id === nf.flowerId);
+                return flower ? { ...flower, price: nf.price * (1 + retailer.markup), nurseryId: nf.nurseryId } : null;
+            })
+            .filter(f => f);
+        
 
             return {
                 ...retailer,
