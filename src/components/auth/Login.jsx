@@ -19,7 +19,7 @@ export const Login = () => {
           localStorage.setItem(
             "thorn_user",
             JSON.stringify({
-              id: user.id,
+              customerId: user.id,
             })
           );
 

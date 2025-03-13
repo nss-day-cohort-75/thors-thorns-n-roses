@@ -8,7 +8,8 @@ export const RetailerList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setRetailers(await getRetailerDetails());
+      const retailerData = await getRetailerDetails();
+      setRetailers(retailerData);
     };
     fetchData();
   }, []);

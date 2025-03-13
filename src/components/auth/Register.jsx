@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import { createUser, getUserByEmail } from "../../services/userService";
+import {
+  createUser,
+  getUserByEmail,
+  createShoppingCart,
+} from "../../services/userService";
 
 export const Register = () => {
   const [customer, setCustomer] = useState({
@@ -15,10 +19,17 @@ export const Register = () => {
   const registerNewUser = () => {
     createUser(customer).then((createdUser) => {
       if (createdUser.hasOwnProperty("id")) {
+        const newCart = {
+          customerId: createUser.id,
+          retailerId: 0,
+          flowerId: 0,
+          quantity: 0,
+        };
+        createShoppingCart(newCart).then(() => {});
         localStorage.setItem(
           "thorn_user",
           JSON.stringify({
-            id: createdUser.id,
+            customerId: createdUser.id,
           })
         );
         navigate("/"); // Redirect to homepage after registration
@@ -42,6 +53,14 @@ export const Register = () => {
     copy[evt.target.id] = evt.target.value;
     setCustomer(copy);
   };
+
+  // const cartDefault = {
+  //   id: 0,
+  //   customerId: 0,
+  //   retailerId: 0,
+  //   flowerId: 0,
+  //   quantity: 0
+  // }
 
   return (
     <main style={{ textAlign: "center" }}>

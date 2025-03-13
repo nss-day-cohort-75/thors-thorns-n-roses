@@ -15,7 +15,7 @@ export const Distributor = ({distributor, flowers, nurseryFlowers, distributorNu
                     return filteredNurseryFlowers.map(nf => {
                         //filter the flowers by flower id
                         const filteredFlowers = flowers.filter(flower => flower.id === nf.flowerId)
-                        const markupPrice = parseFloat(nf.price) + distributor.markup
+                        const markupPrice = parseFloat(nf.price) * (1 + distributor.markup)
                         return filteredFlowers.map(flower => {
                             return (
                                 <div className="distributor-flower" key={flower.id}>
