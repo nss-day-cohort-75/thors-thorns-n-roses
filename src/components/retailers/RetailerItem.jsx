@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { addToCart, getCartByCustomerId } from "../../services/CartService";
+import { addToCart } from "../../services/CartService";
 
 export const getCurrentCustomerId = () => {
   const user = JSON.parse(localStorage.getItem("thorn_user")); // getting thorn_user
-  return user ? user.customerId : null;
+  return user ? user.customerId : null; //if thorn_user exists, it returns customerId
 };
 export const RetailerItem = ({ retailer }) => {
-  const { name, address, distributor, flowers } = retailer;
+  const { name, address, distributor, flowers, nurseryFlowers } = retailer;
 
   const handleAddToCart = (flowerId) => {
     const customerId = getCurrentCustomerId();
-    console.log("Customer ID: ", customerId);
     if (!customerId) {
       alert("Please log in to add items to your cart.");
       return;
@@ -32,12 +30,19 @@ export const RetailerItem = ({ retailer }) => {
       {flowers.length > 0 ? (
         <ul>
           {flowers.map((flower) => {
-            // Calculate the price with the distributor's markup
-            const retailerPrice = parseFloat(flower.price) * (1 + distributor.markup);
+            // Look up the flower price in the nursery_flower data
+            const flowerData = nurseryFlowers.find(
+              (nf) => nf.flowerId === flower.id
+            );
+            const basePrice = flowerData ? parseFloat(flowerData.price) : 0;
+            const distributorPrice = basePrice * (1 + distributor.markup); // Apply distributor markup
+            const retailerPrice = distributorPrice * (1 + retailer.markup); // Apply retailer markup on distributor's price
 
             return (
               <li key={`flower-${flower.id}`}>
                 {flower.color} {flower.species} - ${retailerPrice.toFixed(2)}
+                <br />
+                <strong>Retail Price: ${retailerPrice.toFixed(2)}</strong>
                 <button
                   onClick={() => {
                     handleAddToCart(flower.id);
@@ -57,7 +62,6 @@ export const RetailerItem = ({ retailer }) => {
       <p>{distributor?.name || "Unknown"}</p>
 
       <h4>Nurseries Supplying Flowers:</h4>
-      {/* Display nurseries supplying the retailer's flowers */}
       <ul>
         {retailer.nurseries.length > 0 ? (
           retailer.nurseries.map((nursery) => (
