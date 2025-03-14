@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "../CSSFolder/NavBar.css";
 import { useState, useEffect } from "react";
+import { clearCartByCustomerId } from "../services/CartService";
 
 export const NavBar = () => {
   const navigate = useNavigate();
@@ -17,8 +18,25 @@ export const NavBar = () => {
     updateCartCount(); // Run once on load
     window.addEventListener("storage", updateCartCount); // Listen for storage updates
   
-    return () => window.removeEventListener("storage", updateCartCount); // Cleanup
+    return () => window.removeEventListener("storage", updateCartCount);
   }, []);
+  const handleLogout = () => {
+    const user = JSON.parse(localStorage.getItem("thorn_user"));
+  
+    if (user) {
+      clearCartByCustomerId(user.customerId) // Call function from CartService
+        .then(() => {
+          localStorage.removeItem("thorn_user");
+          localStorage.removeItem("cart");
+          window.dispatchEvent(new Event("storage")); // Notify components
+          navigate("/login", { replace: true }); // Redirect to login
+        })
+        .catch((error) => console.error("Error clearing cart:", error));
+    }
+  };
+  
+
+
 
 
 
@@ -43,12 +61,7 @@ export const NavBar = () => {
     <Link
       className="navbar-link"
       to=""
-      onClick={() => {
-        localStorage.removeItem("thorn_user")
-        localStorage.removeItem("cart"); // Clear cart data
-        window.dispatchEvent(new Event("storage")); // Notify navbar
-        navigate("/login", { replace: true })
-      }}
+      onClick={handleLogout}
     >
       Logout 
       </Link>
