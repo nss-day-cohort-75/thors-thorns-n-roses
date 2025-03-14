@@ -238,12 +238,5 @@
       "password": "securePass7"
     }
   ],
-  "shopping_cart": [
-    {
-      "customerId": 1,
-      "flowerId": 1,
-      "quantity": 1,
-      "id": 1
-    }
-  ]
+  "shopping_cart": []
 }
